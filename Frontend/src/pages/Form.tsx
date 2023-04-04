@@ -16,21 +16,23 @@ const initState: UserTravelInitState = {
 
 const Form: FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
+    const [Travellertouch, setTravellertouch] = useState<boolean>(false);
     const [travellers, setTravellers] = useState<string | number>(0);
     const toast = useToast()
     const handlePostTravellers = async (values: UserTravelInitState, { resetForm }: FormikHelpers<UserTravelInitState>): Promise<any> => {
         setLoading(true)
         try {
-            console.log({ ...values, travellers })
-            // let { data } = await axios.post("https://real-lime-cockroach-tutu.cyclic.app/user", { ...values })
+
+            let { data } = await axios.post("https://real-lime-cockroach-tutu.cyclic.app/user", { ...values })
             toast({
-                // title: data.message,
+                title: data.message,
                 description: "We've Added your Details for you.",
                 status: 'success',
                 duration: 2000,
                 isClosable: true,
             })
             setLoading(false)
+            console.log({ ...values, travellers })
             formik.setValues(initState);
             resetForm();
         } catch {
@@ -61,15 +63,13 @@ const Form: FC = () => {
             <Flex flexDirection="column" w="80%" m="auto" justifyContent={"right"} mt="80px"  >
                 <Text as='em' textAlign={"center"} fontSize="25" mt="5" mb="2" >Add Travellers</Text>
                 <Divider orientation='horizontal' borderColor={'#000'} borderWidth="1px" w="95%" m="auto" mb="5" />
-                <Flex flexDirection="row" alignItems={"center"} p="2" bg="#f4f5d7" border="1px solid #ecf229 " w="90%" m="auto" >
+                <Flex flexDirection="row" alignItems={"center"} p="2" bg="#f4f5d7" border="1px solid #ecf229 " w="90%" m="auto" mb="30px"  >
                     <AiFillExclamationCircle color='#b1b52d' fontSize={"25"} />
                     <Text fontSize="18" ml="5" >All Input Feilds are Mandotary</Text>
                 </Flex>
-                <form onSubmit={formik.handleSubmit} style={{ width: "90%", margin: "auto" }} >
+                <form onSubmit={formik.handleSubmit} style={{ width: "100%", margin: "auto", boxShadow: "rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset", marginBottom: "50px", borderRadius: "10px" }} >
                     <Container
-                        maxW="100%"
-                        mb="10"
-                        borderRadius="20"
+                        maxW="90%"
                         background={"#fff"}
                         centerContent
                     >
@@ -130,8 +130,9 @@ const Form: FC = () => {
                                 <input
                                     type='range'
                                     onChange={handletravellers}
+                                    onMouseEnter={() => setTravellertouch(true)}
                                     value={travellers} />
-                                {travellers === 0 && <Text color="red.400" fontSize={12} >Atleast One Travellers is required.</Text>}
+                                {Travellertouch && travellers === "0" && <Text color="red.400" fontSize={12} >Atleast One Travellers is required.</Text>}
                             </Flex>
 
                             <Flex flexDirection="row" w="100%" mt="5px" justifyContent={"space-between"}>
@@ -165,7 +166,7 @@ const Form: FC = () => {
                                     {formik.touched.currency && formik.errors.currency && <Text color="red.400" fontSize={12} >{formik.errors.currency}.</Text>}
                                 </Flex>
                             </Flex>
-                            <Button bg="#ffe01b" color="#000" border="1px solid #000" borderRadius="99px" boxShadow={"transparent"} _hover={{ bg: "#e2e8f0", transform: "translateY(-15px)", boxShadow: "0px 8px 0px #000", }} mt="40px" mb="2" w="25%" type="submit" isLoading={loading} loadingText="Submitting details" >
+                            <Button bg="#ffe01b" color="#000" border="1px solid #000" borderRadius="99px" boxShadow={"transparent"} _hover={{ bg: "#e2e8f0", transform: "translateY(-10px)", boxShadow: "0px 8px 0px #000", }} mt="40px" mb="2" w="25%" type="submit" isLoading={loading} loadingText="Submitting details" >
                                 Submit
                             </Button>
 

@@ -17,7 +17,7 @@ body {
 }
 
 .active span {
-  font-weight: bolder;
+  font-weight: 600;
   color: #000;
 }
 

@@ -26,10 +26,10 @@ const Navbar: FC = () => {
                     <CustomNavLink activeclassname="active" to="/all-users" route="Users" />
                 </Flex>
                 <Flex flexDir={"row"} w="30%" justifyContent={"space-between"} alignItems={"center"} >
-                    <Button bg="#ffe01b" color="#000" border="1px solid #000" borderRadius="99px" boxShadow={"transparent"} _hover={{ bg: "#e2e8f0", transform: "translateY(-15px)", boxShadow: "0px 8px 0px #000", }} mr="20px" w="70%" >
+                    <Button bg="#ffe01b" color="#000" border="1px solid #000" borderRadius="99px" boxShadow={"transparent"} _hover={{ bg: "#e2e8f0", transform: "translateY(-10px)", boxShadow: "0px 8px 0px #000", }} mr="20px" w="70%" >
                         Signup
                     </Button>
-                    <Button bg="#ffe01b" color="#000" border="1px solid #000" borderRadius="99px" boxShadow={"transparent"} _hover={{ bg: "#e2e8f0", transform: "translateY(-15px)", boxShadow: "0px 8px 0px #000", }} w="70%" >
+                    <Button bg="#ffe01b" color="#000" border="1px solid #000" borderRadius="99px" boxShadow={"transparent"} _hover={{ bg: "#e2e8f0", transform: "translateY(-10px)", boxShadow: "0px 8px 0px #000", }} w="70%" >
                         Login
                     </Button>
                 </Flex>
