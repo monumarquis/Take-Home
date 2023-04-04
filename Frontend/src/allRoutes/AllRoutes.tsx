@@ -9,7 +9,7 @@ const AllRoutes: FC = () => {
             {/* Home Route */}
             <Route path='/' element={<Form />}></Route>
             {/* display all user route */}
-            <Route path='/all-users' element={<ShowAllUser />}></Route>
+            <Route path='/all-user' element={<ShowAllUser />}></Route>
         </Routes>
     )
 }
