@@ -85,7 +85,7 @@ It’s Individual AssignMent where I've used MERN stack to make thetake Home Tra
 
 <br />
 
-## Glimpses of Task-Palnner.com 🙈 :
+## Glimpses of Take-Home.com 🙈 :
 
 
 
