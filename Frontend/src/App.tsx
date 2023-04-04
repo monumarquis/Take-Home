@@ -1,10 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
+import { FC } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import AllRoutes from './allRoutes/AllRoutes';
 
-function App() {
+const App: FC = () => {
   return (
     <div className="App">
+      <Navbar />
+      <AllRoutes />
     </div>
   );
 }
