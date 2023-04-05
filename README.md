@@ -4,7 +4,6 @@
 <h3 align="center">It's a MERN Stack Travel web application</h3>
 
 <br />
-
 ## Screens 
 - Homepage / Landing Page
 - All User Dashboard
