@@ -10,22 +10,30 @@ app.post("/", async (req: Request, res: Response) => {
     email,
     destination,
     travellers,
-    budgetPerPerson,
+    budgetOfPerson,
     currency,
   }: {
     name: string;
     email: string;
     destination: string;
-    travellers: string;
-    budgetPerPerson: string;
+    travellers: number;
+    budgetOfPerson: number;
     currency: string;
   } = req.body;
+  console.log({
+    name,
+    email,
+    destination,
+    travellers,
+    budgetOfPerson,
+    currency,
+  })
   if (
     !name ||
     !email ||
     !destination ||
     !travellers ||
-    !budgetPerPerson ||
+    !budgetOfPerson ||
     !currency
   )
     return res.status(403).send({ message: "Please Enter All Details" });
@@ -41,7 +49,7 @@ app.post("/", async (req: Request, res: Response) => {
     email,
     destination,
     travellers,
-    budgetPerPerson,
+    budgetOfPerson,
     currency,
   };
   const user: UserDocument = new userModel(userInput);

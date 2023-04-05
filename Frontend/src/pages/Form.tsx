@@ -22,8 +22,8 @@ const Form: FC = () => {
     const handlePostTravellers = async (values: UserTravelInitState, { resetForm }: FormikHelpers<UserTravelInitState>): Promise<any> => {
         setLoading(true)
         try {
-
-            let { data } = await axios.post("http://localhost:8001/user", { ...values })
+            console.log({ ...values, travellers })
+            let { data } = await axios.post("http://localhost:8001/user", { ...values, travellers })
             toast({
                 title: data.message,
                 description: "We've Added your Details for you.",
@@ -32,7 +32,6 @@ const Form: FC = () => {
                 isClosable: true,
             })
             setLoading(false)
-            console.log({ ...values, Number(travellers) })
             formik.setValues(initState);
             resetForm();
         } catch {
@@ -54,7 +53,7 @@ const Form: FC = () => {
     });
 
     const handletravellers = (e: FormEvent<HTMLInputElement>) => {
-        setTravellers((e.target as HTMLInputElement).value)
+        setTravellers(Number((e.target as HTMLInputElement).value))
     }
 
 
@@ -132,7 +131,7 @@ const Form: FC = () => {
                                     onChange={handletravellers}
                                     onMouseEnter={() => setTravellertouch(true)}
                                     value={travellers} />
-                                {Travellertouch && travellers === "0" && <Text color="red.400" fontSize={12} >Atleast One Travellers is required.</Text>}
+                                {Travellertouch && travellers === 0 && <Text color="red.400" fontSize={12} >Atleast One Travellers is required.</Text>}
                             </Flex>
 
                             <Flex flexDirection="row" w="100%" mt="5px" justifyContent={"space-between"}>

@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 8001;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 // user Routes
 app.use("/user", userRoute);
 
