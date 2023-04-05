@@ -19,6 +19,7 @@ app.use("/user", userRoute);
 app.get("/", async (req: Request, res: Response) => {
   res.status(200).send("This is  My Take-Home backend");
 });
+
 // Allow requests from all domains by setting the 'Access-Control-Allow-Origin' header to '*'
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.header('Access-Control-Allow-Origin', '*');

@@ -63,11 +63,26 @@ app.post("/", async (req: Request, res: Response) => {
 
 // The second endpoint will retrieve existing form submissions from the data base.
 app.get("/", async (req: Request, res: Response) => {
-
-  const user: UserDocument[] = await userModel.find({});
-  return res
-    .status(201)
-    .send({ user, message: "Your Details retrieved Successfully" });
+  const { page = 1, limit = 10 } = req.query
+  console.log(page, limit)
+  if (page) {
+    const Totaluser: UserDocument[] = await userModel.find({})
+    let totalPages: number = Math.floor(Totaluser.length / 10) + 1
+    console.log(totalPages)
+    const user: UserDocument[] = await userModel.find({}).limit(Number(limit) * 1)
+      .skip((Number(page) - 1) * Number(limit));
+    return res
+      .status(200)
+      .send({ user, message: "Your Details retrieved Successfully", totalPages });
+  }
+  else {
+    const user: UserDocument[] = await userModel.find({})
+    return res
+      .status(200)
+      .send({ user, message: "Your Details retrieved Successfully" });
+  }
 });
+
+
 
 export default app;
