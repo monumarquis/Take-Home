@@ -4,7 +4,6 @@
 <h3 align="center">It's a MERN Stack Travel web application</h3>
 
 <br />
-<img src="https://data.bloggif.com/distant/user/store/d/3/3/c/796cd831051dc11c2e8f9f00abdbc33d.gif" width="800px" />
 
 ## Screens 
 - Homepage / Landing Page
@@ -35,7 +34,6 @@
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="nodejs" />
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="expressjs" />
   <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" />
-  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white" alt="JsonWebToken" />
 </p>
 
 
@@ -90,7 +88,7 @@ It’s Individual AssignMent where I've used MERN stack to make the take Home Tr
 <table>
   <tr>
     <td><img src="https://i.ibb.co/kDBqVwj/1.png"  alt="Login" /></td>
-    <td><img  src="https://i.ibb.co/5cTPF31/2.png"  alt="signup" /></td>
+    <td><img src="https://i.ibb.co/5cTPF31/2.png"  alt="signup" /></td>
   </tr>
 </table>
 
