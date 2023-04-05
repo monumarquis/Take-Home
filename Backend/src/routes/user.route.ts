@@ -4,6 +4,7 @@ import { UserDocument, UserInput } from "../types/user";
 
 const app: IRouter = express.Router();
 
+// first endpoint will receive data from the form on the first page in frontend
 app.post("/", async (req: Request, res: Response) => {
   const {
     name,
@@ -58,6 +59,15 @@ app.post("/", async (req: Request, res: Response) => {
   return res
     .status(201)
     .send({ user, message: "Your Details Added Successfully" });
+});
+
+// The second endpoint will retrieve existing form submissions from the data base.
+app.get("/", async (req: Request, res: Response) => {
+
+  const user: UserDocument[] = await userModel.find({});
+  return res
+    .status(201)
+    .send({ user, message: "Your Details retrieved Successfully" });
 });
 
 export default app;
