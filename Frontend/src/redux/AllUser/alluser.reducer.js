@@ -1,16 +1,25 @@
-import { ActionType, UserReducerInitState, UserState } from "../../types/user";
+import { ALL_USER_PROFILE_ERROR, ALL_USER_PROFILE_SUCCESS, ALL_USER_PROFILE_REQUEST } from "./alluser.types";
 
-const initState: UserReducerInitState = {
+const initState = {
     data: [],
     loading: false,
     error: false,
 };
+
 export const allUserProfileReducer = (
     state = initState,
-    { type, payload }: { type: string, payload: UserState[] }
+    { type, payload }
 ) => {
     switch (type) {
-        case ActionType.SUCCESS: {
+        case ALL_USER_PROFILE_REQUEST: {
+            return {
+                ...state,
+                data: payload,
+                loading: true,
+                error: false,
+            };
+        }
+        case ALL_USER_PROFILE_SUCCESS: {
             return {
                 ...state,
                 data: payload,
@@ -18,18 +27,10 @@ export const allUserProfileReducer = (
                 error: false,
             };
         }
-        case ActionType.REQUEST: {
+        case ALL_USER_PROFILE_ERROR: {
             return {
                 ...state,
-                data: [],
-                loading: true,
-                error: false,
-            };
-        }
-        case ActionType.ERROR: {
-            return {
-                ...state,
-                data: [],
+                data: payload,
                 loading: false,
                 error: true,
             };

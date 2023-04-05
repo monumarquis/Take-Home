@@ -2,7 +2,7 @@ import { Button, Flex, Input, FormControl, FormLabel, Container, Text, useToast,
 import axios from 'axios';
 import { useFormik } from 'formik';
 import { FormikHelpers, FormikProps } from 'formik/dist/types';
-import { FC, useState, useCallback, FormEvent } from 'react'
+import { FC, useState, FormEvent } from 'react'
 import { UserTravelInitState } from '../types/user';
 import { uservalidationSchema } from '../controller/FormValdation';
 import { AiFillExclamationCircle } from "react-icons/ai"
@@ -17,13 +17,13 @@ const initState: UserTravelInitState = {
 const Form: FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [Travellertouch, setTravellertouch] = useState<boolean>(false);
-    const [travellers, setTravellers] = useState<string | number>(0);
+    const [travellers, setTravellers] = useState<string | number>(50);
     const toast = useToast()
     const handlePostTravellers = async (values: UserTravelInitState, { resetForm }: FormikHelpers<UserTravelInitState>): Promise<any> => {
         setLoading(true)
         try {
             console.log({ ...values, travellers })
-            let { data } = await axios.post("http://localhost:8001/user", { ...values, travellers })
+            let { data } = await axios.post("https://graceful-wasp-slip.cyclic.app/user", { ...values, travellers })
             toast({
                 title: data.message,
                 description: "We've Added your Details for you.",
@@ -60,7 +60,7 @@ const Form: FC = () => {
     return (
         <section>
             <Flex flexDirection="column" w="80%" m="auto" justifyContent={"right"} mt="80px"  >
-                <Text as='em' textAlign={"center"} fontSize="25" mt="5" mb="2" >Add Travellers</Text>
+                <Text as='em' textAlign={"center"} fontSize="25" mt="5" mb="2" >Add Tour Details</Text>
                 <Divider orientation='horizontal' borderColor={'#000'} borderWidth="1px" w="95%" m="auto" mb="5" />
                 <Flex flexDirection="row" alignItems={"center"} p="2" bg="#f4f5d7" border="1px solid #ecf229 " w="90%" m="auto" mb="30px"  >
                     <AiFillExclamationCircle color='#b1b52d' fontSize={"25"} />

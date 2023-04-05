@@ -3,11 +3,9 @@ import {
     combineReducers,
     applyMiddleware,
     compose,
-    Action
 
 } from "redux";
-import thunk, { ThunkMiddleware } from "redux-thunk";
-import { RootState } from "../types/user";
+import thunk from "redux-thunk";
 import { allUserProfileReducer } from "./AllUser/alluser.reducer";
 
 
@@ -20,5 +18,6 @@ const rootReducer = combineReducers({
 const createCompose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const store = legacy_createStore(
     rootReducer,
-    createCompose(applyMiddleware(thunk as ThunkMiddleware<RootState, Action>))
+    createCompose(applyMiddleware(thunk))
 );
+

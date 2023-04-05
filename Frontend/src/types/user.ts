@@ -15,6 +15,8 @@ export type UserRequestAction = ActionType.REQUEST;
 
 export type UserAction = UserRequestAction | UserErrorAction | UserSuccessAction;
 
+export type spinnerProps = { Sectionheight: string, loaderHeight: string, loaderWidth: string }
+
 export type UserState = {
     _id: string,
     name: string,
@@ -28,7 +30,7 @@ export type UserState = {
 }
 
 export type UserReducerInitState = {
-    data: UserState[]
+    data?: UserState[] 
     loading: boolean;
     error: boolean;
 }
@@ -36,7 +38,7 @@ export type UserReducerInitState = {
 
 
 export interface RootState {
-    userState: UserReducerInitState;
+    allUser: UserReducerInitState;
 }
 
 export type UserTravelInitState = {
