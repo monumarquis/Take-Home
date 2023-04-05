@@ -9,7 +9,7 @@
 ## Screens 
 - Homepage / Landing Page
 - All User Dashboard
-- Single User Page
+
 
 
 <br /> 
@@ -51,9 +51,7 @@
 
 
 
-<h3 align="center"><a href="https://task-executioner.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
-
-<h3 align="center"><a href="https://drive.google.com/file/d/1nWIolAc_aWS9LretG0VV31OYT5evb2f2/view?usp=sharing"><strong>Demo Video »</strong></a></h3>
+<h3 align="center"><a href="https://rad-kangaroo-aa16e4.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
 
 
 <br />
@@ -66,20 +64,19 @@
   <a href="#Contact">Author</a> &#10023;
 </p>
 
-It’s Individual AssignMent where I've used MERN stack to make thetake Home Travel web application with our creativity along with frontend & backend.
+It’s Individual AssignMent where I've used MERN stack to make the take Home Travel web application with our creativity along with frontend & backend.
 
 
 <br />
 <br />
 
 ## 🚀 Important Note
-- This is My backend Deploy link https://real-lime-cockroach-tutu.cyclic.app/ You should check this link if it is working or not  before going live because sometimes server goes down then it stops for working for sometime.
+- This is My backend Deploy link https://graceful-wasp-slip.cyclic.app/ You should check this link if it is working or not  before going live because sometimes server goes down then it stops for working for sometime.
 
 
 ## 🚀 User Features
 - Add Tour details
 - User dashboard
-- Single User Page
 
 <br />
 
@@ -92,12 +89,8 @@ It’s Individual AssignMent where I've used MERN stack to make thetake Home Tra
 
 <table>
   <tr>
-    <td><img src="https://i.ibb.co/TW8dyc9/Login.png"  alt="Login" /></td>
-    <td><img  src="https://i.ibb.co/YPZrx0w/signup.png"  alt="signup" /></td>
-  </tr>
-  <tr>
-   <td><img src="https://i.ibb.co/RSBJYSk/add.png"  alt="add" /></td>
-    <td><img src="https://i.ibb.co/wLxf8Qd/report.png"  alt="report" /></td>
+    <td><img src="https://i.ibb.co/kDBqVwj/1.png"  alt="Login" /></td>
+    <td><img  src="https://i.ibb.co/5cTPF31/2.png"  alt="signup" /></td>
   </tr>
 </table>
 
