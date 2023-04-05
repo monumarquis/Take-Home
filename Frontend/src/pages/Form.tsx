@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import { FormikHelpers, FormikProps } from 'formik/dist/types';
 import { FC, useState, useCallback, FormEvent } from 'react'
-import { UserTravelInitState } from '../types/userDetail';
+import { UserTravelInitState } from '../types/user';
 import { uservalidationSchema } from '../controller/FormValdation';
 import { AiFillExclamationCircle } from "react-icons/ai"
 const initState: UserTravelInitState = {
@@ -23,7 +23,7 @@ const Form: FC = () => {
         setLoading(true)
         try {
 
-            let { data } = await axios.post("https://real-lime-cockroach-tutu.cyclic.app/user", { ...values })
+            let { data } = await axios.post("http://localhost:8001/user", { ...values })
             toast({
                 title: data.message,
                 description: "We've Added your Details for you.",
@@ -32,7 +32,7 @@ const Form: FC = () => {
                 isClosable: true,
             })
             setLoading(false)
-            console.log({ ...values, travellers })
+            console.log({ ...values, Number(travellers) })
             formik.setValues(initState);
             resetForm();
         } catch {
