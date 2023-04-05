@@ -140,6 +140,46 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 <br />
 
 
+# Getting Started with MEN(MongoDb,Nodejs,Express) App
+
+This project was bootstrapped with [Create Nodejs App].
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+runs the app in production by first building the project with npm run build, and then executing the compiled JavaScript at build/index.js
+Open [http://localhost:3000](http://localhost:8000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm start:dev`
+
+Starts the application in development using nodemon and ts-node to do cold reloading.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles Nodejs in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+
+
+### Tools used on this project
+
+- Visual Studio Code
+- Vite-JS template
+
+<br />
+
 
 ## Contact
 
