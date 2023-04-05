@@ -30,7 +30,8 @@ export type UserState = {
 }
 
 export type UserReducerInitState = {
-    data?: UserState[] 
+    data?: UserState[]
+    totalPages?: number
     loading: boolean;
     error: boolean;
 }

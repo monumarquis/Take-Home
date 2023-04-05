@@ -2,6 +2,7 @@ import { ALL_USER_PROFILE_ERROR, ALL_USER_PROFILE_SUCCESS, ALL_USER_PROFILE_REQU
 
 const initState = {
     data: [],
+    totalPages: null,
     loading: false,
     error: false,
 };
@@ -14,7 +15,6 @@ export const allUserProfileReducer = (
         case ALL_USER_PROFILE_REQUEST: {
             return {
                 ...state,
-                data: payload,
                 loading: true,
                 error: false,
             };
@@ -22,7 +22,8 @@ export const allUserProfileReducer = (
         case ALL_USER_PROFILE_SUCCESS: {
             return {
                 ...state,
-                data: payload,
+                data: payload.user,
+                totalPages: payload.totalPages,
                 loading: false,
                 error: false,
             };
@@ -30,7 +31,6 @@ export const allUserProfileReducer = (
         case ALL_USER_PROFILE_ERROR: {
             return {
                 ...state,
-                data: payload,
                 loading: false,
                 error: true,
             };
